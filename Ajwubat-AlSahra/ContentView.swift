@@ -8,14 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var  tapCount = 0
+    @State private var name = ""
+    let students = ["nona", "Loli" , "toto"]
+    @State private var selectedStudent = "nona"
+
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            NavigationView{
+                Form{
+
+                    Section{
+                        TextField("Enter your name" , text: $name)
+
+                        Text("Hello, \(name)")
+
+                    }
+                    Group{
+                        ForEach(0..<3){
+                            Text("Row \($0)")
+                        }
+                    }
+                    Group{
+                        Button("Tap Count \(tapCount)"){
+                            tapCount += 1
+                        }
+                    }
+                    Section{
+                        Picker("Select a Student", selection: $selectedStudent)
+
+                    }
+                    }
+                }.navigationTitle("SwiftUi")
+                    .navigationBarTitleDisplayMode(.inline)
+
+            }
+            }
     }
 }
 
