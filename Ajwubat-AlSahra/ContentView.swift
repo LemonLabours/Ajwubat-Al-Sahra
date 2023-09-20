@@ -18,12 +18,12 @@ struct ContentView: View {
         VStack {
             NavigationView{
                 Form{
-
+                    
                     Section{
                         TextField("Enter your name" , text: $name)
-
+                        
                         Text("Hello, \(name)")
-
+                        
                     }
                     Group{
                         ForEach(0..<3){
@@ -37,14 +37,14 @@ struct ContentView: View {
                     }
                     Section{
                         Picker("Select a Student", selection: $selectedStudent)
-
-                    }
+                        
+                    }}
                     }
                 }.navigationTitle("SwiftUi")
                     .navigationBarTitleDisplayMode(.inline)
 
             }
-            }
+            
     }
 }
 
