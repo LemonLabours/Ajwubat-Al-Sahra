@@ -11,7 +11,7 @@ import SwiftUI
 struct Ajwubat_AlSahraApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WeSplitView()
         }
     }
 }

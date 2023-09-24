@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A997962B2AC0333800B25B37 /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997962A2AC0333800B25B37 /* WeSplitView.swift */; };
 		A9A9D94B2AB9BC0800A79B1D /* Ajwubat_AlSahraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9D94A2AB9BC0800A79B1D /* Ajwubat_AlSahraApp.swift */; };
 		A9A9D94D2AB9BC0800A79B1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9D94C2AB9BC0800A79B1D /* ContentView.swift */; };
 		A9A9D94F2AB9BC0900A79B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A9D94E2AB9BC0900A79B1D /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A997962A2AC0333800B25B37 /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		A9A9D9472AB9BC0800A79B1D /* Ajwubat-AlSahra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ajwubat-AlSahra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A9D94A2AB9BC0800A79B1D /* Ajwubat_AlSahraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ajwubat_AlSahraApp.swift; sourceTree = "<group>"; };
 		A9A9D94C2AB9BC0800A79B1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				A9A9D94E2AB9BC0900A79B1D /* Assets.xcassets */,
 				A9A9D9502AB9BC0900A79B1D /* Ajwubat_AlSahra.entitlements */,
 				A9A9D9512AB9BC0900A79B1D /* Preview Content */,
+				A997962A2AC0333800B25B37 /* WeSplitView.swift */,
 			);
 			path = "Ajwubat-AlSahra";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A997962B2AC0333800B25B37 /* WeSplitView.swift in Sources */,
 				A9A9D94D2AB9BC0800A79B1D /* ContentView.swift in Sources */,
 				A9A9D94B2AB9BC0800A79B1D /* Ajwubat_AlSahraApp.swift in Sources */,
 			);

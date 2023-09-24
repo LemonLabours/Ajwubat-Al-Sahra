@@ -21,7 +21,7 @@ struct ContentView: View {
                     Text("Hello, \(name)")
                 }
 
-                ForEach(0..<3) {
+                ForEach(1..<3) {
                     Text("Row \($0)")
                 }
 
