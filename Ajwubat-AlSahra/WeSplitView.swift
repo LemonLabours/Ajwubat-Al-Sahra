@@ -4,7 +4,6 @@
 //
 //  Created by Lama AL Yousef on 24/09/2023.
 //
-
 import SwiftUI
 
 struct WeSplitView: View {
@@ -12,8 +11,9 @@ struct WeSplitView: View {
     @State private var numberOfPeople = 3
     @State private var tipPercentage = 20
     let tipPercentages = [10,15,20,25,0]
+    @FocusState private var amountIsFocused: Bool
 
-    var totalPerPerson: Double{
+    var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 1)
         let tipSelection = Double(tipPercentage)
 
@@ -24,36 +24,54 @@ struct WeSplitView: View {
     }
 
     var body: some View {
-        NavigationView{
-            Form{
-                Section{
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.identifier )).keyboardType(.decimalPad)
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.identifier))
+                        .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
+                        .onAppear {
+                            amountIsFocused = true
+                        }
 
-                    Picker("Number of people", selection: $numberOfPeople){
-                        ForEach(1..<11){
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(1..<11) {
                             Text("people \($0)")
                         }
                     }
                 }
-                Section{
-                    Picker("Tip Percentage", selection: $tipPercentage){
-                        ForEach(tipPercentages, id: \.self){
-                            Text($0 , format: .percent)
+                Section {
+                    Picker("Tip Percentage", selection: $tipPercentage) {
+                        ForEach(tipPercentages, id: \.self) {
+                            Text($0, format: .percent)
                         }
-                    }.pickerStyle(.segmented)
-                }header: {
+                    }
+                    .pickerStyle(.segmented)
+                } header: {
                     Text("how much tip do you want to leave?")
                 }
-                Section{
+                Section {
                     Text(totalPerPerson, format: .currency(code: "SAR"))
+                }
+                // Debugging button to manually toggle focus
+                Button("Toggle Focus") {
+                    amountIsFocused.toggle()
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
-
     }
 }
 
-#Preview {
-    WeSplitView()
+struct WeSplitView_Previews: PreviewProvider {
+    static var previews: some View {
+        WeSplitView()
+    }
 }
